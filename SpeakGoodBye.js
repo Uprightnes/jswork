@@ -1,38 +1,75 @@
-// NOTE! The steps in this file are basically identical to the ones you
-// performed in the SpeakHello.js file.
+// // NOTE! The steps in this file are basically identical to the ones you
+// // performed in the SpeakHello.js file.
 
-// STEP 6: Wrap the entire contents of SpeakGoodBye.js inside of an IIFE
-// See Lecture 52, part 2
+// // STEP 6: Wrap the entire contents of SpeakGoodBye.js inside of an IIFE
+// // See Lecture 52, part 2
 
 
-(function (window) {
-    var yaakovGreeter = {};
-    yaakovGreeter.name = 'Yaakov';
-    yaakovGreeter.greeting = 'Hello ';
-    yaakovGreeter.sayHello = function () {
-        console.log(yaakovGreeter.greeting + yaakovGreeter.name);
-    }
+// // (function (window) {
+// //     var yaakovGreeter = {};
+// //     yaakovGreeter.name = 'Yaakov';
+// //     yaakovGreeter.greeting = 'Hello ';
+// //     yaakovGreeter.sayHello = function () {
+// //         console.log(yaakovGreeter.greeting + yaakovGreeter.name);
+// //     }
 
-    window.yaakovGreeter = yaakovGreeter;
+// //     window.yaakovGreeter = yaakovGreeter;
 
+// // })(window);
+
+// // (function (window) {
+// //     var johnGreeter = {};
+// //     johnGreeter.name = 'John';
+// //     johnGreeter.greeting = 'Hi ';
+// //     johnGreeter.sayHi = function () {
+// //         console.log(johnGreeter.greeting + johnGreeter.name);
+// //     }
+
+// //     window.johnGreeter = johnGreeter;
+
+// // })(window);
+
+// // yaakovGreeter.sayHello();
+// // johnGreeter.sayHi();
+
+
+(function(window){
+    var byeSpeaker = {};
+    byeSpeaker.name = name;
+    var speakWord = "Good Bye";
+
+
+    byeSpeaker.speak = function (name) {
+      console.log(speakWord + " " + name);
+}
+    window.byeSpeaker = byeSpeaker;
 })(window);
 
-(function (window) {
-    var johnGreeter = {};
-    johnGreeter.name = 'John';
-    johnGreeter.greeting = 'Hi ';
-    johnGreeter.sayHi = function () {
-        console.log(johnGreeter.greeting + johnGreeter.name);
-    }
 
-    window.johnGreeter = johnGreeter;
+(function(window){
+var helloSpeaker = {};
+helloSpeaker.name = name;
+var speakWord = "Hello";
 
+helloSpeaker.speak = function (name) {
+  console.log(speakWord + " " + name);
+}
+window.helloSpeaker = helloSpeaker;
 })(window);
 
-yaakovGreeter.sayHello();
-johnGreeter.sayHi();
+(function () {
 
+var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+for (var i = 0; i < names.length; i++) {
+    var firstLetter = names[i].charAt(0).toLowerCase();
+    if (firstLetter === 'j') {
+    byeSpeaker.speak(names[i]);
+  } else {
+    helloSpeaker.speak(names[i]);
+  }
+}
 
+})();
 
 
 
